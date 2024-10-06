@@ -2781,6 +2781,10 @@ static char *send_ncam_reader_config(struct templatevars *vars, struct uriparams
 	}
 #endif
 
+	// cak7_mode
+	if(rdr->cak7_mode)
+		{ tpl_addVar(vars, TPLADD, "NAGRACAK7MODECHECKED", "checked"); }
+
 	// ins7E
 	if(rdr->ins7E[0x1A])
 	{

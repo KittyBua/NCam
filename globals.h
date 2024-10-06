@@ -1029,6 +1029,7 @@ struct s_cardreader
 	//io_serial config
 	int8_t          flush;
 	int8_t          read_written;       // 1 = written bytes has to read from device
+	bool		skip_extra_atr_parsing;
 	bool            skip_t1_command_retries;
 	bool            skip_setting_ifsc;
 };
@@ -1714,6 +1715,7 @@ struct s_reader
 #if defined(READER_STREAMGUARD) || defined(READER_TONGFANG) || defined(READER_JET)
 	uint32_t        cas_version;                    // cas version, used by tongfang,jet and streamguard. manual set for streamguard.
 #endif
+	int8_t		cak7_mode;
 	int8_t          nagra_read;                     // read nagra ncmed records: 0 Disabled (default), 1 read all records, 2 read valid records only
 	int8_t          detect_seca_nagra_tunneled_card;
 	int8_t          force_irdeto;
@@ -1723,18 +1725,18 @@ struct s_reader
 	uint8_t         rsa_mod_length;
 	uint8_t         des_key[128];                   // 3des key for Viaccess 16 bytes, des key for Dre 128 bytes
 	uint8_t         des_key_length;
-	uint8_t           atr[64];
-	uint8_t           card_atr[64];                   // ATR readed from card
+	uint8_t         atr[64];
+	uint8_t         card_atr[64];                   // ATR readed from card
 	int8_t          card_atr_length;                // length of ATR
 	int8_t          seca_nagra_card;                // seca nagra card
 	int32_t         atrlen;
 	SIDTABS         sidtabs;
 	SIDTABS         lb_sidtabs;
 	SIDTABS         lb_prio_sidtabs;
-	uint8_t           hexserial[8];
+	uint8_t         hexserial[8];
 	int32_t         nprov;
-	uint8_t           prid[CS_MAXPROV][8];
-	uint8_t           sa[CS_MAXPROV][4];              // viaccess & seca
+	uint8_t         prid[CS_MAXPROV][8];
+	uint8_t         sa[CS_MAXPROV][4];              // viaccess & seca
 	uint8_t         read_old_classes;               // viaccess
 	int8_t          ecmending;                      // viaccess
 	uint8_t         maturity;                       // viaccess & seca maturity level
@@ -1743,7 +1745,7 @@ struct s_reader
 	uint16_t        b_nano;
 	uint16_t        s_nano;
 	int8_t          ecmcommand;                     // used for filtering nagra bad ecm commands
-	uint8_t           ecmcommandcache[5];             // cachebuff for ecm commands
+	uint8_t         ecmcommandcache[5];             // cachebuff for ecm commands
 	int32_t         blockemm;
 	int32_t         saveemm;
 	LLIST           *blockemmbylen;

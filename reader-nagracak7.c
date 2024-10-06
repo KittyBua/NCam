@@ -412,7 +412,19 @@ static int32_t nagra3_card_init(struct s_reader *reader, ATR *newatr)
 	reader->cak7_seq = 0;
 	cs_clear_entitlement(reader);
 
-	if(memcmp(atr + 11, "DNASP4", 6) == 0)
+	if(memcmp(atr + 8, "DNASP4", 6) == 0)
+	{
+		if((memcmp(atr + 8, "DNASP400", 8) == 0) && !reader->cak7_mode)
+		{
+			return ERROR;
+		}
+		else
+		{
+			memcpy(reader->rom, atr + 8, 15);
+			rdr_log(reader,"Rom revision: %.15s", reader->rom);
+		}
+	}
+	else if(memcmp(atr + 11, "DNASP4", 6) == 0)
 	{
 		memcpy(reader->rom, atr + 11, 15);
 		rdr_log(reader,"Rom revision: %.15s", reader->rom);
