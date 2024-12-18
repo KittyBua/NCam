@@ -2,7 +2,7 @@
 #define CONFIG_H_
 
 #define WITH_EMU 1
-#define WITH_SOFTCAM 1
+//#define WITH_SOFTCAM 1
 #define WEBIF 1
 #define WEBIF_LIVELOG 1
 #define WEBIF_JQUERY 1
@@ -42,7 +42,7 @@
 //#define MODULE_PANDORA 1
 //#define MODULE_GHTTP 1
 #define MODULE_SCAM 1
-//#define MODULE_STREAMRELAY 1
+#define MODULE_STREAMRELAY 1
 
 #define WITH_CARDREADER 1
 

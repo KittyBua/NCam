@@ -1,0 +1,36 @@
+>> LOG BUILD ncam-cortexa9hf-vfp-neon-Unofficial >>
+
+
+==============================================
+   ASSIGNING PERMISSIONS
+==============================================
+
+
+ Permissions applied correctly
+
+
+==============================================
+   REMOVE OLD REMAINS
+==============================================
+
+
+ Cleaning performed correctly
+
+
+
+==============================================
+   START : BUILD
+==============================================
+
+
+ starting Compilation
+
+/home/raed/NCam/build_dir/build_cortexa9hf-vfp-neon.sh: line 104: /home/raed/my_git/NCam/cross/library_checker.sh: No such file or directory
++-------------------------------------------------------------------------------
+/bin/sh: 1: /home/raed/my_git/NCam/cross/Toolchain-Cortex-A15-arm-glibc2.23/bin/armv7-linux-gnueabihf-gcc: not found
+make --no-print-directory \
+	CROSS=/home/raed/my_git/NCam/cross/Toolchain-Cortex-A15-arm-glibc2.23/bin/armv7-linux-gnueabihf- \
+	CONF_DIR=/var/tuxbox/config \
+	EXTRA_FLAGS="-mtune=cortex-a9 -mcpu=cortex-a9 -mfpu=neon-vfpv4 -static-libgcc -I. -s" \
+	 -j4 --jobserver-auth=3,4 -- EXTRA_LIBS=/home/raed/my_git/NCam/cross/Toolchain-Cortex-A15-arm-glibc2.23/armv7-linux-gnueabihf/sysroot/usr/lib/libpng.a\ /home/raed/my_git/NCam/cross/Toolchain-Cortex-A15-arm-glibc2.23/armv7-linux-gnueabihf/sysroot/usr/lib/libz.a\ -L/home/raed/my_git/NCam/cross/Toolchain-Cortex-A15-arm-glibc2.23/armv7-linux-gnueabihf/sysroot/usr/lib\ -lssl LIBCRYPTO_LIB=-L/home/raed/my_git/NCam/cross/Toolchain-Cortex-A15-arm-glibc2.23/armv7-linux-gnueabihf/sysroot/usr/lib\ -lcrypto LIBCURL_LIB=-L/home/raed/my_git/NCam/cross/Toolchain-Cortex-A15-arm-glibc2.23/armv7-linux-gnueabihf/sysroot/usr/lib\ -lcurl\ -lrt LIBDVBCSA_LIB=/home/raed/my_git/NCam/cross/Toolchain-Cortex-A15-arm-glibc2.23/armv7-linux-gnueabihf/sysroot/usr/lib/libdvbcsa.a USE_LIBCURL=1 USE_LIBCRYPTO=1 target=arm ARCH=arm NCAM_BIN=ncam-cortexa9hf-vfp-neon-Unofficial
+make[1]: warning: -j4 forced in submake: resetting jobserver mode.
