@@ -38,6 +38,10 @@ extern int32_t exit_oscam;
 #define DN_MULTISHOT 0
 #endif
 
+#ifndef CW_ALGO_CSA_ALT
+#define CW_ALGO_CSA_ALT 0x02  // match the value used in NCam for CSA_ALT
+#endif
+
 static const char *get_stream_type_txt(uint8_t stream_type)
 {
 	switch(stream_type)
