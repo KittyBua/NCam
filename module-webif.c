@@ -755,10 +755,6 @@ static char *send_ncam_config_global(struct templatevars *vars, struct uriparams
 
 	tpl_addVar(vars, TPLADD, "DROPDUPSCHECKED", (cfg.dropdups == 1) ? "checked" : "");
 
-#if !defined(__MIPSEL__)
-	tpl_addVar(vars, TPLADD, "VIEW_GETHOSTBYNAME", tpl_getTpl(vars, "GETHOSTBYNAME"));
-#endif
-
 	tpl_printf(vars, TPLADD, "FAILBANTIME", "%d", cfg.failbantime);
 	tpl_printf(vars, TPLADD, "FAILBANCOUNT", "%d", cfg.failbancount);
 
