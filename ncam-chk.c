@@ -159,7 +159,7 @@ int32_t chk_srvid_disablecrccws_only_for_exception(ECM_REQUEST *er)
 {
 	SIDTAB *sidtab;
 
-	for(sidtab = cfg.sidtab; sidtab && nr < MAX_SIDBITS; sidtab = sidtab->next
+	for(sidtab = cfg.sidtab; sidtab; sidtab = sidtab->next)
 	{
 		if(sidtab->disablecrccws_only_for_exception && (sidtab->num_caid | sidtab->num_provid | sidtab->num_srvid) && chk_srvid_match(er, sidtab))
 		{
