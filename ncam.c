@@ -1816,6 +1816,7 @@ int32_t main(int32_t argc, char *argv[])
 {
 	fix_stacksize();
 
+	cs_inet_ntoa_init();
 	run_tests();
 	int32_t i, j;
 	prog_name = argv[0];
